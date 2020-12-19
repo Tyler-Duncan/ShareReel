@@ -14,8 +14,7 @@ No more forgetting to send photos to loved ones, or having just one of your phot
 
 ### Quote from the founder:
 
-"I want to promote happiness and positive-connections for everyone, what better way than to do that when a picture is worth a thousand words."
-- Tyler Duncan
+"I want to promote happiness and positive-connections for everyone, what better way than to do that when a picture is worth a thousand words." -Tyler Duncan
 
 ### Where do I start?
 
