@@ -20,11 +20,11 @@ No more forgetting to send photos to loved ones, or having just one of your phot
 
 Navigate to [Link to app instance on heroku] and sign up for a free account.
 
-Log in and start creating your photo reel. 
-    - Upload photos. 
-    - Select your transition style. 
-    - {Future feature}: Choose your design. 
-    - Click the generate photo reel button. 
+Log in and start creating your photo reel.  
+    - Upload photos.  
+    - Select your transition style.  
+    - {Future feature}: Choose your design.  
+    - Click the generate photo reel button.  
 
 Once your link has been generated navigate to or share it to anyone you'd like! 
 
