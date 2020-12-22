@@ -1,4 +1,39 @@
 body {
-  background:  linear-gradient(64deg, rgba(130,140,190,0.87) 7.6%, rgba(170,190,178,1) 90.8%);
+  background:  linear-gradient(64deg, rgba(130,140,190,0.87) 7.6%, rgb(255, 255, 255) 90.8%) no-repeat center center fixed;
+
+  background-size: cover;
+  /* overflow: hidden; */
+  padding: 20px;
 }
 
+.page {
+  background:linear-gradient(64deg, rgba(130, 140, 190, 0) , rgba(255, 255, 255, 0)) no-repeat center center fixed;
+  padding: 20px;
+  box-shadow:
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+             0.3em 0.3em 3em rgba(0,0,0,0.3);
+  margin: 5px;
+  min-height: 60vh;
+}
+
+.header {
+  background:linear-gradient(64deg, rgba(130, 140, 190, 0) , rgb(255, 255, 255)) no-repeat center center fixed;
+  padding: 20px;
+  box-shadow:
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+  /* height: 20vh; */
+}
+
+.footer {
+  background:linear-gradient(64deg, rgba(130, 140, 190, 0) , rgb(255, 255, 255)) no-repeat center center fixed;
+  padding: 20px;
+  box-shadow:
+       inset 0 -3em 3em rgba(0,0,0,0.1),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+  /* height: 20vh; */
+}
+
+.link {
+  margin: 10px;
+}
