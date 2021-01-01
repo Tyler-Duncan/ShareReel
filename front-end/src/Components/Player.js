@@ -1,47 +1,68 @@
-import React from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import {
-  Container,
-  Col,
-  Row,
-  Image,
-  FormGroup,
-  InputGroup,
-  Button
+  Button,
+  Modal,
+  Carousel,
+  Form
 } from 'react-bootstrap';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams
-} from "react-router-dom";
+import axios from 'axios';
 
-
-//Implement use of parameter housing the Reel Code
 function Player() {
 
-  let { reel } = useParams();
+  const [show, setShow] = useState(false);
+  const [reel, setReel] = useState([{url: 'https://img.etsystatic.com/il/bf308b/1140789011/il_fullxfull.1140789011_odw9.jpg', description: 'from internet'}]);
 
-  if (reel) {
-    return (
-      <>
-        Carousel Of Photos that match code/hash in database
-      </>
-    );
-  } else {
 
-    return (
-      <Container>
-      <p>Type in the Reel Code</p>
-        <input type='text' placeholder='Reel Code'></input>
-        <input type='submit'></input>
-        <br></br>
-        <Button style={{marginTop: '10px'}}>Fullscreen</Button>
-      </Container>
-    );
+  const { register, handleSubmit /*, watch, errors*/ } = useForm();
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const onSubmit = (data) => {
+    axios.get(`http://localhost:5000/player/${data.code}`)
+      .then((response) => {
+        let photos = response.data.photos;
+        setReel(photos);
+      })
+      .then(handleShow)
   }
 
+
+
+  return (
+    <>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form.Group>
+          <Form.Label>Reel Code</Form.Label>
+          <Form.Control name='code' type="text" placeholder="code" ref={register} required />
+        </Form.Group>
+        <Button variant="outline-primary" type='submit' size='lg' block>
+          Play Reel
+      </Button>
+      </Form>
+
+      <Modal show={show} onHide={handleClose} dialogClassName='fullscreen-modal'>
+        <Modal.Body>
+          <Carousel pause={false}>
+            {reel.map((photo, index) => {
+              return (
+                <Carousel.Item key={index} interval={5000}>
+                  <img
+                    className='fullscreen'
+                    src={photo.url}
+                    alt={`Slide ${index}`}
+                  />
+                  {/* <Carousel.Caption>
+                    {photo.description}
+                  </Carousel.Caption> */}
+                </Carousel.Item>
+              );
+            })}
+          </Carousel>
+        </Modal.Body>
+      </Modal>
+    </>
+  );
 }
 
 export default Player;
