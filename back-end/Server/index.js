@@ -8,7 +8,11 @@ const { getReel } = require('./Queries/getReel.js');
 //DB and Server start-up
 const app = express();
 const dbName = 'reels'
-const port = 5000;
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 5000;
+}
+
 const dbURI = `mongodb+srv://server:server@mvp.w52eo.mongodb.net/${dbName}?retryWrites=true&w=majority`;
 
 mongoose.connect(dbURI, {
