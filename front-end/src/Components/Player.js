@@ -19,7 +19,7 @@ function Player() {
   const handleShow = () => setShow(true);
 
   const onSubmit = (data) => {
-    axios.get(`http://localhost:5000/player/${data.code}`)
+    axios.get(`http://52.14.193.57:5000/player/${data.code}`)
       .then((response) => {
         let photos = response.data.photos;
         setReel(photos);

@@ -32,7 +32,7 @@ function Player2() {
   const { register, handleSubmit /*, watch, errors*/ } = useForm();
 
   const onSubmit = (data) => {
-    axios.get(`http://localhost:5000/player/${data.code}`)
+    axios.get(`http://52.14.193.57:5000/player/${data.code}`)
       .then((response) => {
         let photos = response.data.photos;
         setReel(photos);

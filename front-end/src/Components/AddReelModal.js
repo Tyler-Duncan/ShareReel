@@ -32,7 +32,7 @@ export default function AddReelModal() {
     }
     test()
 
-    axios.post('http://localhost:5000/addReel', data)
+    axios.post('http://52.14.193.57:5000/addReel', data)
       .then((response) => {
         setCode(`Code Generated: ${response.data._id}`);
       })
